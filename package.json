@@ -1,0 +1,31 @@
+{
+	"name": "graphql-server",
+	"version": "1.0.0",
+	"description": "GraphQL Server",
+	"main": "index.js",
+	"scripts": {
+		"start": "nodemon --exec babel-node -- ./index.js"
+	},
+	"author": "Santiago Sandoval",
+	"license": "ISC",
+	"babel": {
+		"presets": [
+			"@babel/preset-env"
+		]
+	},
+	"dependencies": {
+		"@babel/core": "^7.4.4",
+		"@babel/node": "^7.2.2",
+		"@babel/preset-env": "^7.4.4",
+		"babel-loader": "^8.0.6",
+		"express": "^4.17.1",
+		"express-graphql": "^0.8.0",
+		"graphql": "^14.3.1",
+		"nodemon": "^1.19.1"
+	},
+	"devDependencies": {
+		"babel-cli": "^6.26.0",
+		"babel-preset-env": "^1.7.0",
+		"babel-preset-stage-0": "^6.24.1"
+	}
+}
