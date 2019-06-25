@@ -16,7 +16,12 @@ const root = {
 			nombre: 'Santiago',
 			apellido: 'Sandoval',
 			empresa: 'Quick',
-			email: 'felipesantiagosandoval@gmail.com'
+			emails: [
+				{
+					email: 'felipesantiagosandoval@gmail.com',
+					email: 'santiago@gmail.com'
+				}
+			]
 		};
 	}
 };
