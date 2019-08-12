@@ -1,0 +1,56 @@
+ type Cliente {
+        id: ID
+        nombre: String
+        apellido: String
+        empresa: String
+        emails: [Email]
+        edad: Int
+        tipo: TipoCliente
+        pedidos: [Pedido]
+    }
+    type Email {
+        email: String
+    }
+    type Pedido {
+        producto: String
+        precio: Int
+    }
+    """ Asigna la categoria del cliente """
+    enum TipoCliente {
+        BASICO
+        PREMIUM
+    }
+
+    """Consulta el cliente"""
+    type Query {
+        getClientes(limite: Int): [Cliente]
+        getCliente(id: ID): Cliente
+    }
+
+    input PedidoInput {
+        producto: String
+        precio: Int
+    }
+    input EmailInput {
+        email: String
+    }
+    """Campos para los nuevos clientes"""
+    input ClienteInput {
+        id: ID
+        nombre: String!
+        apellido: String!
+        empresa: String!
+        emails: [EmailInput]
+        edad: Int!
+        tipo: TipoCliente!
+        pedidos: [PedidoInput]
+    }
+    """ Nutatios para crear nuevos Cliente """
+    type Mutation {
+        """ Permite crear nuevos clientes """
+        crearCliente( input: ClienteInput) : Cliente
+        """ Permite editar clientes """
+        actualizarCliente(input: ClienteInput) : Cliente
+         """ Permite eliminar clientes """
+         eliminarCliente(id: ID!):  String
+    }
